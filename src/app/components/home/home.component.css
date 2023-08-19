@@ -1,0 +1,55 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 106px);
+  background-image: url(../../../assets/images/couple-winter-cloths-studio.jpg);
+  /* background-image: url(../../../assets/images/img12.jpg); */
+  /* opacity: 90%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .home-bg {
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 9%, 4%, 0.529);
+} */
+/* .home-image {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  right: 0;
+  background-image: url(../../../assets/images/purse-ga9de204d7_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+.home-container .image {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  width: 40rem;
+  height: 30rem;
+}
+.title {
+  width: 35rem;
+  position: absolute;
+  top: 11rem;
+  left: 5rem;
+  color: #fff;
+}
+h1 {
+  margin-bottom: 3rem;
+  font-size: 6.4rem;
+  color: #0D2833;
+}
+.title p {
+  padding-right: 3rem;
+}
+button{
+  width: 8rem;
+  height: 3rem;
+  background-color: #FD7D00;
+  color: #0d2833;
+  font-size: medium;
+  font-weight: 700;
+  border: none;
+}

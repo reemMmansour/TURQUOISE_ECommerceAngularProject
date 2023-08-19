@@ -1,0 +1,18 @@
+.add-to-card-button {
+  border: none;
+  font-size: 14px;
+  height: 2rem;
+  width: 7rem;
+  border-radius: 0.3rem;
+  margin-right: 0.5rem;
+  background-color: #0d2833;
+  color: #fd7d00;
+}
+.h1 {
+  color: #fd7d00;
+}
+.inputQauntity{
+  width: 9rem;
+
+
+}

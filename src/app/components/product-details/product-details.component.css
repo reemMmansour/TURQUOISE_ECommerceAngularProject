@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card {
+  max-width: 46rem;
+  margin: 5rem 0 2rem;
+}
+
+.title {
+  color: #007472;
+}
+strong,
+.arrow-forward {
+  color: #fd7d00 ;
+
+}

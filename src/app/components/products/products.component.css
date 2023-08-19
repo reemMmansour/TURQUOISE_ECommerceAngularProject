@@ -1,0 +1,20 @@
+/* ************************** */
+/* ************************** */
+/* ************************** */
+/* ************************** */
+
+.product-container {
+  background: #00839a1e;
+  /* padding-left: ; */
+  height:calc(100vh - 108px);
+}
+
+.sidenav-content {
+  padding: 3rem 1rem;
+  margin: 0;
+}
+
+.container-card
+ {
+  padding-left: 2rem;
+ }

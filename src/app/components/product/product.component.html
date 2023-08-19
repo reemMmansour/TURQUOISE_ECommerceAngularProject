@@ -1,0 +1,24 @@
+<div class=" m-2 card">
+  <mat-card class="product-card">
+    <!-- routing -->
+    <div routerLink="/product-details/{{data.id}}">
+      <div class="image-card p-3 mb-3 shadow d-flex justify-content-center align-content-center">
+        <img class="img-card  " mat-card-image src="{{data.image}}" alt="Photo of a Shiba Inu">
+      </div>
+      <!-- <div class="d-flex flex-column justify-content-between "> -->
+      <mat-card-title class="title py-1 px-3 my-3">{{data.title}}</mat-card-title>
+      <mat-card-content class="p-0">
+        <p class="desc ps-3"> {{data.description.substr(0,60)}}... </p>
+      </mat-card-content>
+      <!-- </div> -->
+    </div>
+    <mat-card-actions>
+      <!-- <app-add-to-cart  (itemAdd)="addToCart($event)"></app-add-to-cart> -->
+      <div class="d-flex w-100 justify-content-between ps-2">
+        <button mat-raised-button class="add-to-card-button " (click)="openDialog()" >ADD</button>
+        <strong class=" ps-3 show-price">{{data.price}} $</strong>
+        <!-- <button mat-button class="p-1 show-button" (click)="onShowDetails()">Show Details</button> -->
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

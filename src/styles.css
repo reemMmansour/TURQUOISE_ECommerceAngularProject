@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  /* height: 100%; */
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+.mdc-snackbar__surface {
+  position: relative;
+  top: 20rem !important;
+  height: 5rem;
+  display: flex;
+  font-size: 20px;
+  /* flex-direction: column; */
+
+}
+.mat-mdc-snack-bar-label {
+  color: #ffffff; /* Replace with the desired text color */
+}
+.mdc-button__label {
+  color: #fd7d00;
+}
+.mdc-snackbar {
+}
+.mdc-snackbar ::before {
+  background-color: #0d2833;
+  z-index: -1;
+  /* height: 4rem;
+  display: flex;
+  flex-direction: column; */
+}

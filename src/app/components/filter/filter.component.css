@@ -1,0 +1,27 @@
+
+.sidenav {
+  width: 15rem;
+  padding: 3rem 1rem;
+}
+
+
+.sidenav ul li {
+  margin-bottom: 1.5rem;
+}
+
+li {
+  color: #015351;
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+.active {
+  color: #fd7d00;
+  /* background-color: #0d2833; */
+}
+li:hover {
+  color: #fd7d00;
+  cursor: pointer;
+  background: #00839a1e;
+
+}

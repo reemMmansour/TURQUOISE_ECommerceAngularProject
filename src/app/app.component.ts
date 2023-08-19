@@ -9,7 +9,7 @@ import { AlertService } from './services/alert.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'secondProjectWithRouting';
+  title = 'TURQUOISE_ECommerceAngularProject';
   // products: Product[] =[];
   constructor(
     private communicationService: CommunationService,

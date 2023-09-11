@@ -1,0 +1,12 @@
+<!-- <p>quantity-demanded-dialog-box works!</p> -->
+<!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
+<div class="d-flex flex-column justify-content-center align-items-center py-4">
+  <h1 class="h1" mat-dialog-title>please, enter the quantity demanded:</h1>
+  <div mat-dialog-content>
+    <input matInput type="number" class="inputQauntity" placeholder="0" [(ngModel)]="inputValue" min="1">
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button class="add-to-card-button" (click)="addToCart(inputValue)">Add To Cart</button>
+    <button mat-button mat-dialog-close class="add-to-card-button" (click)="onNoClick()">cancel</button>
+  </div>
+</div>

@@ -1,10 +1,7 @@
-
 .sidenav {
   width: 15rem;
   padding: 3rem 1rem;
 }
-
-
 .sidenav ul li {
   margin-bottom: 1.5rem;
 }
@@ -19,9 +16,11 @@ li {
   color: #fd7d00;
   /* background-color: #0d2833; */
 }
+.noActive {
+  color: #015351;
+}
 li:hover {
   color: #fd7d00;
   cursor: pointer;
   background: #00839a1e;
-
 }

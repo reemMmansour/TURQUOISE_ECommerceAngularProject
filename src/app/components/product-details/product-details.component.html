@@ -1,37 +1,47 @@
 <!-- ------------ -->
-<div class="container">
-  <mat-card class="product-card mt-5 p-3">
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title class="title fs-3">{{productdetails.title}}</mat-card-title>
-        <mat-card-title class="category fs-5 mb-3">{{productdetails.category}}</mat-card-title>
-        <mat-card-subtitle>Price: <strong class="price ms-1">{{productdetails.price}} $</strong></mat-card-subtitle>
-        <mat-card-subtitle>Count: <strong class="count ms-1">{{productdetails.rating.count}}
-          </strong></mat-card-subtitle>
-        <mat-card-subtitle class="d-flex">Rate: <strong class="rate row ms-1">
-            <!-- {{productdetails.rating.rate}} -->
-            <!-- <div class="row"> -->
-            <div class="col-sm-12">
-              <ul class="list-inline" *ngFor="let star of getArray(productdetails.rating.rate,false)"
-                style="display: inline-block">
-                <li><mat-icon> star </mat-icon></li>
-              </ul>
-              <ul class="list-inline" *ngFor="let star of getArray(productdetails.rating.rate,true)"
-                style="display: inline-block">
-                <li><mat-icon> star_border </mat-icon></li>
-              </ul>
-              <!-- </div> -->
-            </div>
-          </strong></mat-card-subtitle>
-        <div class="img-product mb-3 mx-5 ">
-          <img class="shadow p-2" mat-card-xl-image [src]="productdetails.image.trim()">
-        </div>
-      </mat-card-title-group>
-    </mat-card-header>
-    <mat-card-content>
-      <p class="fs-6  fw-bold">Description: </p>
-      <p class="fs-6">{{productdetails.description}}</p>
-      <mat-icon class="arrow-forward float-end fs-3 m-0 fw-bold" routerLink="/products">arrow_forward</mat-icon>
-    </mat-card-content>
-  </mat-card>
+<div class="bg">
+  <div *ngIf="loader">
+    <div class="loader d-flex justify-content-center align-items-center">
+      <app-loader></app-loader>
+    </div>
+  </div>
+  <div *ngIf="!loader">
+    <div class="container ">
+      <div class="pt-2 d-flex justify-content-center align-items-center">
+        <mat-card class="product-card mt-5 p-3">
+          <mat-card-header>
+            <mat-card-title-group>
+              <mat-card-title class="title fs-3">{{productdetails.title}}</mat-card-title>
+              <mat-card-title class="category fs-5 mb-3">{{productdetails.category}}</mat-card-title>
+              <mat-card-subtitle>Price: <strong class="price ms-1">{{productdetails.price}}
+                  $</strong></mat-card-subtitle>
+              <mat-card-subtitle>Count: <strong class="count ms-1">{{productdetails.rating.count}}
+                </strong></mat-card-subtitle>
+              <mat-card-subtitle class="d-flex">Rate: <strong class="rate row ms-1">
+                  <!-- star rating -->
+                  <div class="col-sm-12">
+                    <ul class="list-inline" *ngFor="let star of getArray(productdetails.rating.rate,false)"
+                      style="display: inline-block">
+                      <li><mat-icon> star </mat-icon></li>
+                    </ul>
+                    <ul class="list-inline" *ngFor="let star of getArray(productdetails.rating.rate,true)"
+                      style="display: inline-block">
+                      <li><mat-icon> star_border </mat-icon></li>
+                    </ul>
+                  </div>
+                </strong></mat-card-subtitle>
+              <div class="img-product mb-3 mx-5 ">
+                <img class="shadow p-2" mat-card-xl-image [src]="productdetails.image.trim()">
+              </div>
+            </mat-card-title-group>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="fs-6  fw-bold">Description: </p>
+            <p class="fs-6">{{productdetails.description}}</p>
+            <mat-icon class="arrow-forward float-end fs-3 m-0 fw-bold" routerLink="/products">arrow_forward</mat-icon>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>

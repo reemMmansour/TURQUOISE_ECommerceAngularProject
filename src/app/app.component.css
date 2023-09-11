@@ -1,22 +1,27 @@
+.main-nav{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 mat-toolbar {
-  padding: 0 2rem;
+  padding: 0 3rem;
+}
+.beforeMenu-p {
+  color: var(--main-color);
 }
 .icon-button {
   margin: 0 10px;
   background-color: transparent;
   border: none;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
 }
 .example-spacer {
   flex: 1 1 auto;
 }
-mat-toolbar-row {
-  height: 2.5rem;
-}
 .header {
-  background-color: #0d2833;
+  background-color: var(--main-color);
 }
-.cart-icon:hover {
-  color: #fd7d00;
+.cart-icon:hover,
+.search-icon:hover {
+  color: var(--seconder-color);
 }
-

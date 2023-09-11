@@ -1,20 +1,9 @@
-/* ************************** */
-/* ************************** */
-/* ************************** */
-/* ************************** */
 
+.loader{
+  padding-top: 10rem;
+  /* margin-top: 10rem; */
+}
 .product-container {
   background: #00839a1e;
-  /* padding-left: ; */
-  height:calc(100vh - 108px);
+  height:calc(100vh - 107px);
 }
-
-.sidenav-content {
-  padding: 3rem 1rem;
-  margin: 0;
-}
-
-.container-card
- {
-  padding-left: 2rem;
- }

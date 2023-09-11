@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { NavComponent } from './components/nav/nav.component';
-import { CartComponent } from './components/cart/cart.component';
+import { NavComponent } from './shared/components/nav/nav.component';
+import { CartComponent } from './cart/components/cart/cart.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { RegisterComponent } from './register/register.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'product', component: ProductComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'contact', component: ContactUsComponent },
   { path: 'product-details/:id', component: ProductDetailsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

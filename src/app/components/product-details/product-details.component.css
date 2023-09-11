@@ -1,19 +1,28 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bg {
+  background: #00839a1e;
+  height: calc(100vh - 107px);
 }
-
+.loader {
+  padding-top: 12rem;
+}
 .product-card {
   max-width: 46rem;
-  margin: 5rem 0 2rem;
 }
-
 .title {
   color: #007472;
 }
 strong,
 .arrow-forward {
-  color: #fd7d00 ;
-
+  color: var(--seconder-color);
+}
+.arrow-forward:hover {
+  cursor: pointer;
+}
+.product-card:hover .arrow-forward {
+  animation: right-to-left 0.7s linear infinite;
+}
+@keyframes right-to-left {
+  0% {
+    transform: translateX(-0.7rem);
+  }
 }

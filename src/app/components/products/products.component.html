@@ -1,20 +1,26 @@
-<!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
 <mat-sidenav-container class="product-container">
   <mat-sidenav mode="side" opened>
-    <app-filter [data]="category" [activeClass]="active" (filterDataSelect)="filterGategories($event)"></app-filter>
+    <app-filter [data]="category" (filterDataSelect)="filterGategories($event)"></app-filter>
   </mat-sidenav>
   <!-- error prossecind -->
-  <mat-sidenav-content class="sidenav-content">
-    <div class="page-not-found" *ngIf="pageNotFound">
-      <app-page-not-found></app-page-not-found>
+  <mat-sidenav-content class="sidenav-content py-5 px-3">
+    <div *ngIf="loader">
+      <div class="loader d-flex justify-content-center align-items-center" >
+        <app-loader></app-loader>
+      </div>
     </div>
-    <!-- card -->
-    <div class="container-card d-flex flex-wrap">
-      <div *ngFor="let prod of products">
-        <div *ngIf="prod.category != 'electronics'">
-          <!-- <app-product [data]="prod"></app-product> -->
-          <!-- <app-product [data]="prod" (itemAdd)="add($event)" (itemQuantity)="add($event)"></app-product> -->
-          <app-product [data]="prod" (itemAdd)="itemAdd($event)"></app-product>
+    <div *ngIf="!loader">
+      <div class="page-not-found" *ngIf="pageNotFound">
+        <app-page-not-found></app-page-not-found>
+      </div>
+      <!-- card -->
+      <div class="container-card d-flex flex-wrap ps-4">
+        <div *ngFor="let prod of products">
+          <div *ngIf="prod.category != 'electronics'">
+            <!-- <app-product [data]="prod"></app-product> -->
+            <!-- <app-product [data]="prod" (itemAdd)="add($event)" (itemQuantity)="add($event)"></app-product> -->
+            <app-product [data]="prod" (itemAdd)="itemAdd($event)"></app-product>
+          </div>
         </div>
       </div>
     </div>

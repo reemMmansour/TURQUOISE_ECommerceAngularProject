@@ -9,10 +9,11 @@ export class Product {
   // id!: number; undefine
   id: number;
   image: string;
-  price: number;
+  price?: number;
   rating: {
     count: number;
     rate: number;
   };
   title: string;
+  item: any;
 }

@@ -5,31 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { NavComponent } from './components/nav/nav.component';
+import { NavComponent } from './shared/components/nav/nav.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
-
-import { CartComponent } from './components/cart/cart.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
+import { CartComponent } from './cart/components/cart/cart.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { QuantityDemandedDialogBoxComponent } from './components/quantity-demanded-dialog-box/quantity-demanded-dialog-box.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MaterialModule } from './shared/module/material/material.module';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatTableModule } from '@angular/material/table';
-import { QuantityDemandedDialogBoxComponent } from './quantity-demanded-dialog-box/quantity-demanded-dialog-box.component';
-import { MatSortModule } from '@angular/material/sort';
-import { RegisterComponent } from './register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { FormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -42,28 +32,21 @@ import {MatInputModule} from '@angular/material/input';
     CartComponent,
     FilterComponent,
     ProductDetailsComponent,
-    SpinnerComponent,
     QuantityDemandedDialogBoxComponent,
-    RegisterComponent,
+    LoaderComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatTabsModule,
-    MatSidenavModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatProgressBarModule,
-    MatDialogModule,
-    MatTableModule,
-    MatSortModule,
-    MatSnackBarModule,
     FormsModule,
-    MatInputModule
+    MaterialModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

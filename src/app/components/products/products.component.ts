@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/model/Product';
-import { QuantityDemandedDialogBoxComponent } from 'src/app/quantity-demanded-dialog-box/quantity-demanded-dialog-box.component';
-import { AlertService } from 'src/app/services/alert.service';
-import { CommunationService } from 'src/app/services/communation.service';
+import { QuantityDemandedDialogBoxComponent } from 'src/app/components/quantity-demanded-dialog-box/quantity-demanded-dialog-box.component';
+import { AlertService } from 'src/app/shared/services/alert.service';
+import { CommunationService } from 'src/app/shared/services/communation.service';
 
 @Component({
   selector: 'app-products',
@@ -19,41 +19,30 @@ export class ProductsComponent implements OnInit {
   pageNotFound: boolean = false;
   errorStatus?;
   cartProducts: any[] = [];
-  // @output() errorStatus? = new EventEmitter();
+  loader: boolean = false;
+
   constructor(
     private communicationService: CommunationService,
     private activatedRoute: ActivatedRoute,
     private alertService: AlertService
   ) {}
+
   ngOnInit(): void {
-    // this.getProducts();
     this.getProducts();
-    // this.onShowDetails()
     this.getGategories();
   }
+
   onPageNotFound() {
     this.pageNotFound = true;
   }
-  // productId;
-  // productDetails;
-  // onShowDetails() {
-  //   this.productId = this.activatedRoute.snapshot.paramMap.get('id');
-  //   this.productDetails = this.communicationService
-  //     .getAllProducts()
-  //     .subscribe((res: Product[]) => {
-  //       res.find((x) => x.id == this.productId);
-  //     });
-  // }
 
   getProducts() {
+    this.loader = true;
     this.communicationService.getAllProducts().subscribe(
       (res: Product[]) => {
+        this.loader = false;
         this.pageNotFound = false;
-        // console.log(res[0]);
-        // console.log(res);
         this.products = res;
-        // console.log(this.products[1].category)
-        // console.log(this.products);
       },
       (error) => {
         console.log(error.message);
@@ -67,11 +56,15 @@ export class ProductsComponent implements OnInit {
   // ************ Get All Gategories ***********
 
   getGategories() {
+    this.loader = true;
     this.communicationService.getAllCategories().subscribe(
       (res: string[]) => {
+        this.loader = false;
         // console.log(res[0]);
         this.category = res;
         // console.log(this.category);
+        // console.log(res);
+
         return this.category;
       },
       (error) => {
@@ -88,15 +81,14 @@ export class ProductsComponent implements OnInit {
     // console.log(event)
     if (textValue == 'All') {
       this.getProducts();
-      this.active = true;
     } else {
-      this.active = true;
       this.getProductsCategories(textValue);
     }
-    // this.active = false;
   }
   getProductsCategories(cate: string) {
+    this.loader = true;
     this.communicationService.getProductsByCategory(cate).subscribe((res) => {
+      this.loader = false;
       this.products = res;
     });
   }
@@ -123,9 +115,4 @@ export class ProductsComponent implements OnInit {
     this.addToCart(event);
     console.log(event);
   }
-  // QuantityItemAdd(event: any) {
-  //   this.addToCart(event);
-
-  //   console.log(event);
-  // }
 }

@@ -1,40 +1,31 @@
-<header class="header">
-  <mat-toolbar class="header" color="primary">
-    <span>TURQUOISE</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="icon-button" aria-label="Example icon-button with menu icon">
-      <!-- <mat-icon class="mx-3"> search </mat-icon> -->
-      <mat-icon class=" cart-icon" (click)="goToCartPage()"> shopping_cart </mat-icon>
-    </button>
-  </mat-toolbar>
-</header>
-<div>
+<div class="main-nav">
+  <header class="header">
+    <mat-toolbar class="header" color="primary">
+      <h1 class="mt-3">TURQUOISE</h1>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="icon-button mt-3" aria-label="icon-button with menu icon">
+        <mat-icon [matMenuTriggerFor]="beforeMenu" class="mx-3 search-icon"> search </mat-icon>
+        <mat-menu #beforeMenu="matMenu" xPosition="before" class="beforeMenu">
+          <button mat-menu-item>
+            <p class="beforeMenu-p">Lorem ipsum dolor sit amet.</p>
+          </button>
+          <button mat-menu-item>
+            <p class="beforeMenu-p"> Lorem ipsum dolor sit.</p>
+          </button>
+          <button mat-menu-item>
+            <p class="beforeMenu-p">Lorem ipsum dolor sit amet.</p>
+          </button>
+          <button mat-menu-item>
+            <p class="beforeMenu-p"> Lorem ipsum dolor.</p>
+          </button>
+        </mat-menu>
+        <mat-icon [matBadge]="cartProducts.length" matBadgeColor="warn" class=" cart-icon" (click)="goToCartPage()">
+          shopping_cart </mat-icon>
+      </button>
+    </mat-toolbar>
+  </header>
   <app-nav></app-nav>
+</div>
+<div>
   <router-outlet></router-outlet>
-  <!-- ********************************* -->
-  <!-- <div class="more-products">
-    <app-product>
-      <h4>title</h4>
-      <button class="btn btn-more"> show more in OnePlus</button>
-    </app-product>
-    <app-product>
-      <h4>title</h4>
-      <button class="btn btn-more"> show more in OnePlus</button>
-    </app-product>
-    <app-product>
-      <h4>title</h4>
-      <button class="btn btn-more"> show more in OnePlus</button>
-    </app-product>
-    <app-product>
-      <h4>title</h4>
-      <button class="btn btn-more"> show more in OnePlus</button>
-    </app-product>
-    <div class="card">
-      <ng-content class=".title"></ng-content>
-      <p class="summery"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum magnam suscipit, ullam, quia
-        eveniet earum impedit officia esse deleniti tenetur dicta rem quis qui! Ab modi incidunt dolore quod quam? </p>
-      <ng-content class=".btn-more"></ng-content>
-    </div>
-  </div> -->
-  <!-- ********************************* -->
 </div>

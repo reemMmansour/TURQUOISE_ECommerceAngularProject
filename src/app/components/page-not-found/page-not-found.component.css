@@ -1,5 +1,5 @@
 .not-found {
   margin-top: 15rem;
-  color: #015351;
+  color: var(--turquoise-color);
   font-size: large;
 }

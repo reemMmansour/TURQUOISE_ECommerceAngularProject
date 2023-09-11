@@ -10,11 +10,14 @@ import { isEmpty } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title = 'secondProjectWithRouting';
+  title = 'TURQUOISE_ECommerceAngularProject';
+
   products: Product[] = [];
   cartProducts?: Product[];
   private storageEventListener: EventListener | null = null;
 
+
+  // products: Product[] =[];
   constructor(
     private communicationService: CommunationService,
     private route: Router,

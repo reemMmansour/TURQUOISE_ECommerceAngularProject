@@ -1,9 +1,7 @@
-
-.loader{
+.loader {
   padding-top: 10rem;
-  /* margin-top: 10rem; */
 }
 .product-container {
   background: #00839a1e;
-  height:calc(100vh - 107px);
+  height: calc(100vh - 107px);
 }

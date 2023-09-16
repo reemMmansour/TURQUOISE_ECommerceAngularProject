@@ -5,14 +5,12 @@
   width: 7rem;
   border-radius: 0.3rem;
   margin-right: 0.5rem;
-  background-color: #0d2833;
-  color: #fd7d00;
+  background-color: var(--main-color);
+  color: var(--seconder-color);
 }
 .h1 {
-  color: #fd7d00;
+  color: var(--seconder-color);
 }
-.inputQauntity{
+.inputQauntity {
   width: 9rem;
-
-
 }

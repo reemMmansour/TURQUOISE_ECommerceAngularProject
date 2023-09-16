@@ -1,6 +1,7 @@
 .bg {
   background: #00839a1e;
   height: calc(100vh - 107px);
+  padding-bottom: 3rem;
 }
 .loader {
   padding-top: 12rem;

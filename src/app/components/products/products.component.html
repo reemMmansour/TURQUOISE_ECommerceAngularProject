@@ -1,24 +1,25 @@
 <mat-sidenav-container class="product-container">
+  <!-- Categories -->
   <mat-sidenav mode="side" opened>
     <app-filter [data]="category" (filterDataSelect)="filterGategories($event)"></app-filter>
   </mat-sidenav>
-  <!-- error prossecind -->
+  <!-- All Products -->
   <mat-sidenav-content class="sidenav-content py-5 px-3">
+    <!-- Loader Component -->
     <div *ngIf="loader">
-      <div class="loader d-flex justify-content-center align-items-center" >
+      <div class="loader d-flex justify-content-center align-items-center">
         <app-loader></app-loader>
       </div>
     </div>
     <div *ngIf="!loader">
+      <!-- Page Not Found -->
       <div class="page-not-found" *ngIf="pageNotFound">
         <app-page-not-found></app-page-not-found>
       </div>
-      <!-- card -->
+      <!-- Products -->
       <div class="container-card d-flex flex-wrap ps-4">
         <div *ngFor="let prod of products">
           <div *ngIf="prod.category != 'electronics'">
-            <!-- <app-product [data]="prod"></app-product> -->
-            <!-- <app-product [data]="prod" (itemAdd)="add($event)" (itemQuantity)="add($event)"></app-product> -->
             <app-product [data]="prod" (itemAdd)="itemAdd($event)"></app-product>
           </div>
         </div>

@@ -19,13 +19,16 @@
             <p class="beforeMenu-p"> Lorem ipsum dolor.</p>
           </button>
         </mat-menu>
-        <mat-icon [matBadge]="cartProducts.length" matBadgeColor="warn" class=" cart-icon" (click)="goToCartPage()">
-          shopping_cart </mat-icon>
+        <!-- <mat-icon [matBadge]="cartCount" matBadgeColor="warn" [matBadgeHidden]="countHidden" class=" cart-icon"
+          (click)="goToCartPage()"> shopping_cart </mat-icon> -->
+        <mat-icon [matBadge]="cartCount" matBadgeColor="warn" class=" cart-icon" (click)="goToCartPage()"> shopping_cart
+        </mat-icon>
       </button>
     </mat-toolbar>
   </header>
   <app-nav></app-nav>
 </div>
-<div>
+<!-- Routing -->
+<main>
   <router-outlet></router-outlet>
-</div>
+</main>

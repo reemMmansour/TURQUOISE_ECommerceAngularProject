@@ -11,9 +11,7 @@ export class FilterComponent implements OnInit {
   @Input() data: string[] = [];
   @Output() filterDataSelect = new EventEmitter();
 
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
   filterData(event: Event) {
     this.filterDataSelect.emit(event);
   }

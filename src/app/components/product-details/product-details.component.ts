@@ -16,7 +16,7 @@ export class ProductDetailsComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private communicationService: CommunationService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.loader = true;

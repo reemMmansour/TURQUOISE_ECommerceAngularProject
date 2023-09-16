@@ -71,7 +71,6 @@ export class ProductsComponent implements OnInit {
         console.log(error.message);
       }
     );
-    // this.onShowDetails()
   }
 
   // ************ filter ***********
@@ -94,7 +93,6 @@ export class ProductsComponent implements OnInit {
   }
   addToCart(event: any) {
     // console.log(event);
-
     if ('cart' in localStorage) {
       this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
       let exist = this.cartProducts.find((item) => {
@@ -113,6 +111,6 @@ export class ProductsComponent implements OnInit {
 
   itemAdd(event: any) {
     this.addToCart(event);
-    console.log(event);
+    // console.log(event);
   }
 }

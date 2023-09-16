@@ -1,5 +1,6 @@
 <!-- ------------ -->
 <div class="bg">
+  <!-- Loader Component -->
   <div *ngIf="loader">
     <div class="loader d-flex justify-content-center align-items-center">
       <app-loader></app-loader>
@@ -30,6 +31,7 @@
                     </ul>
                   </div>
                 </strong></mat-card-subtitle>
+              <!-- Image Of Product -->
               <div class="img-product mb-3 mx-5 ">
                 <img class="shadow p-2" mat-card-xl-image [src]="productdetails.image.trim()">
               </div>

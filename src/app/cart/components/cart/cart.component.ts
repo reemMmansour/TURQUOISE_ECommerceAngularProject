@@ -4,6 +4,7 @@ import { Product } from 'src/app/model/Product';
 import { cart } from 'src/app/model/cart';
 import { CartService } from '../services/cart.service';
 import { AlertService } from 'src/app/shared/services/alert.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-cart',
@@ -37,6 +38,7 @@ export class CartComponent implements OnInit {
   getCartProducts() {
     if ('cart' in localStorage) {
       this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
+      this.serviceCart.cartCount.next(this.cartProducts.length);
     }
     // console.table(this.cartProducts);
     return this.cartProducts;
@@ -70,6 +72,7 @@ export class CartComponent implements OnInit {
     if (index >= 0) {
       this.cartProducts.splice(index, 1);
       localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+      this.serviceCart.cartCount.next(this.cartProducts.length);
       this.getCartTotal();
       if ('cart' in localStorage) {
         this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
@@ -81,7 +84,10 @@ export class CartComponent implements OnInit {
   // Delete All Products
   deleteAllProducts() {
     this.cartProducts = [];
+
     localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+    this.serviceCart.cartCount.next(this.cartProducts.length);
+
     this.getCartTotal();
   }
 
@@ -102,7 +108,7 @@ export class CartComponent implements OnInit {
     console.log(total);
     console.log(this.allTotal);
   }
-  
+
   // Add To Cart
   addCart() {
     if (JSON.parse(localStorage.getItem('cart')!).length > 0) {

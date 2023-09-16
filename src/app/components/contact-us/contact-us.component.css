@@ -50,8 +50,8 @@ mat-form-field {
   margin-left: 9.5rem;
   border-radius: 0.3rem;
   margin-right: 0.5rem;
-  background-color: #0d2833;
-  color: #fd7d00;
+  background-color: var(--main-color);
+  color: var(--seconder-color);
   cursor: pointer;
 }
 .button:hover {

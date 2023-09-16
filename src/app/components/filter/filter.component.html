@@ -1,16 +1,11 @@
 <!-- <p>filter works!</p> -->
 <div class="sidenav">
   <ul>
-    <!-- <li class="fs-5" [ngClass]="{'active':activeClass}" (click)="filterData($event)">All</li> -->
-    <li class="fs-5"  (click)="filterData($event)">All</li>
-    <!-- <li><a href="" (click)="filterGategories($event)">All</a></li> -->
+    <li class="fs-5" (click)="filterData($event)">All</li>
   </ul>
   <ul *ngFor=" let cate of data">
-    <!-- <li class="fs-5" [ngClass]="{'active':activeClass}" *ngIf="cate != 'electronics'" value="{{cate}}" -->
-    <li class="fs-5" *ngIf="cate != 'electronics'" value="{{cate}}"
-      (click)="filterData($event)">
+    <li class="fs-5" *ngIf="cate != 'electronics'" value="{{cate}}" (click)="filterData($event)">
       {{cate}}
     </li>
   </ul>
 </div>
-<!-- list  ==> html -->

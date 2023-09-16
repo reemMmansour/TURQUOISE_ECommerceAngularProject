@@ -7,20 +7,19 @@
 }
 
 li {
-  color: #015351;
+  color: var(--turquoise-dark-color);
   font-size: 16px;
   padding: 0.5rem;
   border-radius: 0.4rem;
 }
 .active {
-  color: #fd7d00;
-  /* background-color: #0d2833; */
+  color: var(--seconder-color);
 }
 .noActive {
-  color: #015351;
+  color: var(--turquoise-dark-color);
 }
 li:hover {
-  color: #fd7d00;
+  color: var(--seconder-color);
   cursor: pointer;
   background: #00839a1e;
 }

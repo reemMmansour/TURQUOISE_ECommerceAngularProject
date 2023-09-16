@@ -41,8 +41,7 @@ a {
 .mdc-button__label {
   color: var(--seconder-color);
 }
-.mdc-snackbar {
-}
+
 .mdc-snackbar ::before {
   background-color: var(--main-color);
   z-index: -1;
@@ -51,7 +50,7 @@ a {
 /* ******************** */
 /* change background color for input */
 .mat-mdc-text-field-wrapper {
-  background-color:#fd7e001e ;
+  background-color: #fd7e001e;
 }
 /* remove border of input */
 .mdc-notched-outline .mdc-notched-outline__leading,
